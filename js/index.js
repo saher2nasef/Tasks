@@ -149,10 +149,20 @@ function ChangeData(have = false, length = 0) {
   let Data = JSON.parse(localStorage.getItem("Data"));
   console.log(Data.length);
   if (have == true) {
-    Info.innerHTML = `${length} items left`;
+    if (length == 0) {
+      Info.innerHTML = `No items left`;
+    } else if (length == 1) {
+      Info.innerHTML = `${length} item left`;
+    } else if (length > 1) {
+      Info.innerHTML = `${length} items left`;
+    }
   } else {
-    Info.innerHTML = `${
-      Data.length > 1 ? Data.length + " items left" : "1 items left"
-    }`;
+    if (Data.length > 1) {
+      Info.innerHTML = `${Data.length} items left`;
+    } else if (Data.length == 1) {
+      Info.innerHTML = `1 item left`;
+    } else if (Data.length == 0) {
+      Info.innerHTML = `No items left`;
+    }
   }
 }
