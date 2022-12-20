@@ -50,6 +50,9 @@ body {
   justify-content: center;
   background-color: var(--Bg1);
 }
+body.active {
+  background-image: url("../images/bg-desktop-dark.jpg");
+}
 .Container {
   width: 480px;
   min-height: 70vh;
@@ -215,5 +218,11 @@ label.LabelCheckBox input.checkbox.active + span {
 @media (max-width: 500px) {
   .Container {
     width: 100%;
+  }
+  body {
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+  body.active {
+    background-image: url("../images/bg-mobile-dark.jpg");
   }
 }
