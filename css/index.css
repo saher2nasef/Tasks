@@ -55,7 +55,6 @@ body.active {
 }
 .Container {
   width: 480px;
-  min-height: 70vh;
   height: auto;
   margin-top: 70px;
   background-color: transparent;
@@ -82,7 +81,6 @@ body.active {
 /* =========================== */
 /* start body */
 section.body {
-  height: 500px;
   margin: 20px 0;
   width: 100%;
 }
@@ -113,7 +111,7 @@ section.body #InnerData {
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 20px;
-  height: 400px;
+  height: 373px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -165,7 +163,27 @@ section.body #InnerData .todo .Delete {
 section.body #InnerData .todo:hover .Delete {
   right: 0;
 }
-
+section.body .control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--Bg);
+  padding: 12px 10px;
+  width: 100%;
+  color: var(--Color);
+  border-radius: 5px;
+}
+section.body .control button {
+  color: var(--Color);
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  margin: 2px;
+  font-size: 15px;
+}
+section.body .control button.active {
+  color: #4a78d1;
+}
 label.LabelCheckBox {
   width: 30px !important;
   height: 30px !important;
@@ -224,5 +242,8 @@ label.LabelCheckBox input.checkbox.active + span {
   }
   body.active {
     background-image: url("../images/bg-mobile-dark.jpg");
+  }
+  section.body .control {
+    flex-direction: column;
   }
 }
