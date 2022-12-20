@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --Color: hsl(235, 19%, 35%);
+  --Bg: #fff;
+  --Bg1: #fff;
+}
+
+/* Start ScrollBar */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+  background-image: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+/* end ScrollBar */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  transition: 0.3s;
+}
+body {
+  height: 100vh;
+  background-image: url("../images/bg-desktop-light.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: 100% 30vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: var(--Bg1);
+}
+.Container {
+  width: 480px;
+  min-height: 70vh;
+  height: auto;
+  margin-top: 70px;
+  background-color: transparent;
+  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+}
+/* start header */
+.Container header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.Container header h1 {
+  margin: 0;
+  color: #fff;
+  font-weight: 900;
+}
+/* end header */
+/* =========================== */
+/* start body */
+section.body {
+  height: 500px;
+  margin: 20px 0;
+  width: 100%;
+}
+section.body .AddTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--Bg);
+  padding: 12px 20px;
+  border-radius: 5px;
+}
+section.body .AddTask input[type="text"] {
+  width: calc(100% - 40px);
+  height: 35px;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  padding: 5px;
+  color: var(--Color);
+}
+/* section.body .AddTask label {
+} */
+section.body #InnerData {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+section.body #InnerData .todo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  background-color: var(--Bg);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 17px 12px;
+  position: relative;
+}
+section.body #InnerData .todo.active label.Label {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+section.body #InnerData .todo:first-child {
+  border-radius: 5px;
+}
+section.body #InnerData .todo label.Label {
+  margin-bottom: 0 !important;
+  margin-left: 12px;
+  width: auto;
+  height: auto;
+  color: var(--Color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 70%;
+}
+section.body #InnerData .todo .Delete {
+  display: flex;
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -60px;
+  font-size: 25px;
+  transition: 0.4s;
+  font-weight: 100;
+  color: var(--Color);
+}
+section.body #InnerData .todo:hover .Delete {
+  right: 0;
+}
+
+label.LabelCheckBox {
+  width: 30px !important;
+  height: 30px !important;
+}
+label.LabelCheckBox input {
+  display: none;
+}
+label.LabelCheckBox span {
+  height: 30px;
+  width: 30px;
+  border: 1px solid #ccc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  transition: 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+/* Style its checked state...with a ticked icon */
+label.LabelCheckBox input.checkbox + span:before {
+  content: url(../images/icon-check.svg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: 0.4s;
+}
+label.LabelCheckBox input.checkbox:checked + span:before,
+label.LabelCheckBox input.checkbox.active + span:before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+label.LabelCheckBox input.checkbox:checked + span,
+label.LabelCheckBox input.checkbox.active + span {
+  background-color: #9e7cf7;
+}
+
+/* end body */
+/* =========================== */
+/* start footer */
+.Container footer p {
+  margin-bottom: 0 !important;
+  color: var(--Color);
+}
+
+@media (max-width: 500px) {
+  .Container {
+    width: 100%;
+  }
+}
