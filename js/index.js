@@ -47,6 +47,8 @@ TextToDo.addEventListener("keydown", (event) => {
 
     let Data = JSON.parse(localStorage.getItem("Data"));
     FullDiv(Data);
+    TextToDo.value = "";
+    checkBox.checked = false;
   }
 });
 function DeleteById(Id) {
