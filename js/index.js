@@ -97,6 +97,10 @@ TextToDo.addEventListener("keydown", (event) => {
     FullDiv(Data);
     TextToDo.value = "";
     checkBox.checked = false;
+    for (let x = 0; x < btns.length; x++) {
+      btns[x].classList.remove("active");
+    }
+    btns[0].classList.add("active");
     ChangeData();
   }
 });
