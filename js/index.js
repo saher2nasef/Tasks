@@ -2,6 +2,7 @@ let checkBox = document.getElementById("checkBox");
 let TextToDo = document.getElementById("TextToDo");
 let InnerData = document.getElementById("InnerData");
 let Btn = document.getElementById("Btn");
+let body = document.querySelector("body");
 // To toggle the theme
 let Bool = false;
 Btn.addEventListener("click", () => {
@@ -13,6 +14,7 @@ Btn.addEventListener("click", () => {
     r.style.setProperty("--Color", "#fff");
     r.style.setProperty("--Bg", "hsl(235, 24%, 19%)");
     r.style.setProperty("--Bg1", "hsl(235, 21%, 11%)");
+    body.classList.toggle("active");
     // Moon
   } else {
     Bool = false;
@@ -20,6 +22,7 @@ Btn.addEventListener("click", () => {
     r.style.setProperty("--Color", "hsl(235, 19%, 35%)");
     r.style.setProperty("--Bg", " #fff");
     r.style.setProperty("--Bg1", "#fff");
+    body.classList.toggle("active");
     // Sun
   }
 });
