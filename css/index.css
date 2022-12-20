@@ -44,7 +44,7 @@ body {
   background-image: url("../images/bg-desktop-light.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
-  background-size: 100% 34vh;
+  background-size: 100% 250px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
