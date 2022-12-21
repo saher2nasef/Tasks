@@ -63,6 +63,7 @@ ClearCompleted.addEventListener("click", () => {
   localStorage.setItem("Data", JSON.stringify(Data));
   FullDiv(Data);
   ChangeData();
+  ActiveAll();
 });
 // Load
 window.onload = () => {
@@ -97,10 +98,7 @@ TextToDo.addEventListener("keydown", (event) => {
     FullDiv(Data);
     TextToDo.value = "";
     checkBox.checked = false;
-    for (let x = 0; x < btns.length; x++) {
-      btns[x].classList.remove("active");
-    }
-    btns[0].classList.add("active");
+    ActiveAll();
     ChangeData();
   }
 });
@@ -110,10 +108,7 @@ function DeleteById(Id) {
   Data.splice(Data.indexOf(Result[0]), 1);
   localStorage.setItem("Data", JSON.stringify(Data));
   FullDiv(Data);
-  for (let x = 0; x < btns.length; x++) {
-    btns[x].classList.remove("active");
-  }
-  btns[0].classList.add("active");
+  ActiveAll();
   ChangeData();
 }
 function EditById(Id) {
@@ -123,10 +118,7 @@ function EditById(Id) {
   Data[Data.indexOf(Result[0])].Active = !Value;
   localStorage.setItem("Data", JSON.stringify(Data));
   FullDiv(Data);
-  for (let x = 0; x < btns.length; x++) {
-    btns[x].classList.remove("active");
-  }
-  btns[0].classList.add("active");
+  ActiveAll();
 }
 function FullDiv(Data) {
   InnerData.innerHTML = "";
@@ -169,4 +161,11 @@ function ChangeData(have = false, length = 0) {
       Info.innerHTML = `No items left`;
     }
   }
+}
+
+function ActiveAll() {
+  for (let x = 0; x < btns.length; x++) {
+    btns[x].classList.remove("active");
+  }
+  btns[0].classList.add("active");
 }
