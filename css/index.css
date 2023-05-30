@@ -72,6 +72,9 @@ body.active {
   justify-content: space-between;
   width: 100%;
 }
+.Container header #Btn {
+  cursor: pointer;
+}
 .Container header h1 {
   margin: 0;
   color: #fff;
